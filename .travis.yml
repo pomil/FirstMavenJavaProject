@@ -1,7 +1,15 @@
 language: java
 rvm:
-- 2.2
-- jruby
-env:
-  global:
-    secure: gAzsP/jvsEWxBgk5hG0RkFp1/78PRVmy2U75rZyBag9qG6ngNBVfSwQfy6wpGl7lHnCv8DxCmTuuwM6il3vehUkda3gk9SnUD6LoCJc5PisGISqYNKlq40AR/FNbs/t5l5wpYa6pMzzoLhcmBWsgjn2cRUc/m6x/2adr7f7c1nLMCJQa0QuHHA7fPDHmKMr3HfnVEY5m6tmwILPfCBI39f8aIlDebKO2SaLE23VP0HYYdJ3ZEsQELJyDP2RHKg8jvNE37muLBRMVu+QiaZN687TzR28xZnL3r4lPltETC3Qo6CC5fxXF2jsH8WR5tf6TdsH8sAHPeJupokVyE+PHP+uzSd+i4r7GbOWH/y6eG00ZEU3bftKALDLP2JDsjFP6Mk625BPHHuWJwKfUod3limDKZADR1A95IWQDQCAwSw+SGyq4mtlwbrFQJoSoNVTbgQ86TCtjtO4+Fuzj7yhYg93wQaW4x26mOn6Zrvl2JwwEpj2qAWYTK+LP58Yrzp/Kwjp+wiWES3bBJNhgh3U3uJKm8hdaz5AIpBk4mSXujesiY5WYK96o9VpLbDDh2iFf6SSMlyg+tqjDMEWzu6Lujr+aFhJ9SrFQ9VmpOi6eE+uSYjIClKByIDXpqegdfEPTO+lIoNvHtHjL3HdanewjrCLCk3uWr0UjAiWJAMiH9LU=
+ - 2.2
+ - jruby
+ 
+ 
+addons:
+  sonarcloud:
+    organization: "pomil"
+    token:
+      secure: "AlYlkDcMPAYPGoPR3mBUeQ" # encrypted value of your token
+
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
