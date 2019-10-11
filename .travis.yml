@@ -2,13 +2,3 @@ language: java
 rvm:
  - 2.2
  - jruby
-
-addons:
-  sonarcloud:
-    organization: "pomil"
-    token:
-      secure: "8e971ce98ed4f986c8d61498398d68f2fc1247b7" # encrypted value of your token
-
-script:
-  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
