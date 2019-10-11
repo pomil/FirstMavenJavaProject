@@ -7,7 +7,7 @@ addons:
   sonarcloud:
     organization: "pomil"
     token:
-      secure: "c696c0012748939bc91fca6af32ded4601e38ef2" # encrypted value of your token
+      secure: "8e971ce98ed4f986c8d61498398d68f2fc1247b7" # encrypted value of your token
 
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
