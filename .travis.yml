@@ -1,4 +1,14 @@
 language: java
 rvm:
- - 2.2
- - jruby
+- 2.2
+- jruby
+addons:
+  sonarcloud:
+    organization: pomil
+    token:
+      secure: 8e971ce98ed4f986c8d61498398d68f2fc1247b7
+script:
+- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+env:
+  global:
+    secure: L1hOUVf+/VAhiuirskOdmsD5vMCxBoL6E2fgdCw4EIOL2rph4vpWFSVI7iezLUNjn+cBEwU06/IT5vMFUOwR5IYYsTU6WhxB5PmyRvtL/jorZy0gumbH3qBGLtYbIXAGAxA07mWDFl65r9Ur7U7YA+nLkWrv92R5LtAYW6RG3ipKWeN0LAWm3hAKN2gkOgdM3GHgnCgDDJQ7PoRxSNMQHxMJkc/qeqX0a3SZiglwXpoUD4mHcpDu6UQKzweFwKIl6fe9K9aC/CX7QLNf+rSNs2+bJUcIlsTbMa6YFqE8/cUOugVYDxgumjx3XOeEbLK9O+t81HPWOHFSM6/ef8VHmpHlviewZEX4xyn+p0W8OjT3zJXfjf1GGu4NxBkBiyQCbXHhQa+N1zERSZ0POutEQxfpwDyjOHI2jLIZeXgSf2ShOxKxQQOaX4WmnrXhkd4uCd7B4KaCLK/Lxc2s0//AiROPcT4m0nF6RJS15NYp8rp1BQj7cW2k1/Id018R+tdZ16ik9o/d/IwxHTGnXq4TPAbs9Q4KiPZdvGl/m+PbjSvwlZXPrW8y1uyK2VQXGS0HNgnJbrRdP+LwLp5fKRXa9tFvaUHq1TqYpLdRwrpWhyr9jBtXk32R4qkUshW5SX2N+4NEwtvM/1dMPw0Rn/WLC91OSk6776quMg4EDF9NuPo=
